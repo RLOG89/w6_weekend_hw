@@ -4,11 +4,10 @@ import java.util.*;
 public class Player {
 
   private String name;
-  private ArrayList<Card> hand; 
+  private ArrayList<Card> hand = new ArrayList<Card>(); 
 
   public Player (String name){
     this.name = name;
-    // this.hand = new ArrayList<Card>();
   }
 
   public String getName() {
@@ -23,8 +22,8 @@ public class Player {
     return this.hand;
   }
 
-  public void setHand(Card...cards){
-    this.hand = hand;
+  public void setHand(ArrayList<Card> cards){
+    this.hand = cards;
   }
 
 }

@@ -4,29 +4,34 @@ import cards.*;
 
 public class PlayerTest {
 
-  Player player;
-  Card card1;
-  Card card2;
+  Player player1;
+  Player player2;
+  ArrayList<Card> cards;
 
   @Before
   public void before(){
-    player = new Player ("Keith");
-    card1 = new Card(Rank.TEN, Suit.CLUBS);
-    card2 = new Card(Rank.NINE, Suit.CLUBS);
+    player1 = new Player ("Mark");
+    player2 = new Player ("SuperHans");
+    tClubs = new Card(Rank.TEN, Suit.CLUBS);
+    nClubs = new Card(Rank.NINE, Suit.CLUBS);
+    ArrayList<Card> testCards = new ArrayList<Card>();
+    testCards.add(tClubs);
+    testCards.add(nClubs);
+    player1.setHand(testCards);
   }
 
   @Test
   public void testPlayerHasName(){
-    assertEquals("Keith", player.getName());
+    assertEquals("Mark", player1.getName());
   }
 
   @Test
   public void handStartsEmpty(){
-    assertEquals(null,player.getHand());
+    assertEquals(null,player2.getHand());
   }
 
   @Test 
   public void canSetHand(){
-    assertEquals(card1, card2, player.getHand());
+    assertEquals(Rank.TEN, player1.getHand.get(0).getRank());
   }
 }
